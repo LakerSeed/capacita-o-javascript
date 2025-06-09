@@ -2,6 +2,9 @@ const semáforo_status = document.getElementById("titulo_semáforo")
 const luz_r = document.getElementById("luz_r");
 const luz_w = document.getElementById("luz_w");
 const luz_g = document.getElementById("luz_g");
+const luzP_r = document.getElementById("luzP_r");
+const luzP_g = document.getElementById("luzP_g");
+
 let segundos = 0;
 let iniciar;
 let pode_iniciar = true;
@@ -11,11 +14,13 @@ function ignição(){
         pode_iniciar = false;
     }
 }
+
 function abortar(){
     clearInterval(iniciar);
     luz_r.style.backgroundColor = "#390904";
     luz_w.style.backgroundColor = "#4b4d04";
     luz_g.style.backgroundColor = "#04580b";
+    luzP_r.style.backgroundColor = "#390904";
     semáforo_status.textContent = "Semáforo - desativado"
     pode_iniciar = true;
 }
@@ -24,7 +29,9 @@ function semáforo(){
     semáforo_status.textContent = "Semáforo - ativado"
     if(segundos < 4){
         luz_g.style.backgroundColor = "#08e01a";
+        luzP_g.style.backgroundColor = "#04580b";
         luz_r.style.backgroundColor = "#390904";
+        luzP_r.style.backgroundColor = "#e01e08";
         luz_w.style.backgroundColor = "#4b4d04";
     }else if(4 <= segundos && segundos <= 6){
         luz_w.style.backgroundColor = "#d9e008";
@@ -32,8 +39,10 @@ function semáforo(){
         luz_g.style.backgroundColor = "#04580b";
     }else if(6 < segundos  && segundos <= 9){
         luz_r.style.backgroundColor = "#e01e08";
+        luzP_r.style.backgroundColor = "#390904";
         luz_w.style.backgroundColor = "#4b4d04";
         luz_g.style.backgroundColor = "#04580b";
+        luzP_g.style.backgroundColor = "#08e01a";
     }else{
         segundos = 0;
     }

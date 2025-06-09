@@ -45,15 +45,20 @@ nav li a{
     background-color: #1a1d36;
     height: 600px;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 #cont_semáforo h2{
     padding-top: 10px;
     margin-left: 10px;
     color: #ffffff;
 }
+#caixa_sem{
+    display: flex;
+    justify-content: space-around;
+}
 #semáforo{
     position: relative;
-    left: 40%;
     height: 350px;
     width: 200px;
     margin-top:30px;
@@ -81,9 +86,26 @@ nav li a{
 #luz_r{
     background-color: #390904;
 }
+#luzP_r{
+    background-color: #390904;
+}
+#luzP_g{
+    background-color: #04580b;
+}
+#luzP_r, #luzP_g{
+    height: 100px;
+    width: 100px;
+    display: block;
+    position: relative;
+    border-radius: 50px;
+    left: 50px;
+    top: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
 .btn_semáforo{
     position: relative;
-    left: 40%;
+    left: 38%;
     margin-top: 10px;
     height: 50px;
     padding: 10px;
@@ -95,4 +117,14 @@ nav li a{
 .btn_semáforo:hover{
     transform: scale(1.1);
     background-color: #ffc65c;
+}
+#semáforo_pedestre{
+    position: relative;
+    /* left: 40%; */
+    height: 350px;
+    width: 200px;
+    margin-top:30px;
+    border-radius: 10px;
+    background-color: #000000;
+    justify-content: center;
 }
